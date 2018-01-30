@@ -1,5 +1,8 @@
 *
 
 !.gitignore
+!.gitexcludes
 !.bash_profile
 !.git_prompt.sh
+!.inputrc
+!com.googlecode.iterm2.plist
