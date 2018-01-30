@@ -3,6 +3,9 @@ alias atom="open Atom"
 
 # set timestamp in history
 export HISTTIMEFORMAT="%d/%m/%y %T "
+# set vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # git autocomplete
 source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
