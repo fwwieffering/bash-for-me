@@ -1,6 +1,3 @@
-alias atom="open Atom"
-
-
 # set timestamp in history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 # set vim as default editor
