@@ -1,0 +1,10 @@
+# Partial search of history on arrow up/down
+# arrow up
+"\e[A":history-search-backward end-of-line
+# arrow down
+"\e[B":history-search-forward end-of-line
+
+# line moving
+# option arrow moves forward / back one word
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
