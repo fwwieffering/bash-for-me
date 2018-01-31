@@ -9,6 +9,8 @@
 brew install git bash-completion
 # replace mac utils with gnu utils
 brew install --with-default-names coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt
+# install pyenv and pyenv-virtualenv
+brew install pyenv pyenv-virtualenv
 
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
