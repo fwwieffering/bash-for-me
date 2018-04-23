@@ -7,6 +7,10 @@ export EDITOR="$VISUAL"
 # git autocomplete
 source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 
+# GO
+export GOPATH=~/go
+export PATH=$PATH:${GOPATH//://bin:}/bin
+
 ### PROMPT
 # The various escape codes that we can use to color our prompt.
         RED="\[\033[0;31m\]"
@@ -24,17 +28,11 @@ LIGHT_GREEN="\[\033[1;32m\]"
  export PATH="$PYENV_ROOT/bin:$PATH"
  if command -v pyenv 1>/dev/null 2>&1; then
    eval "$(pyenv init -)"
+   eval "$(pyenv virtualenv-init -)"
  fi
-
-# discover python env info
-if command -v pyenv version 1>/dev/null 2>&1; then
-  version=$(pyenv version | awk '{print $1;}')
-else
-  version=''
-fi
 
 # include git info
 source ~/.git_prompt.sh
 GIT_PS1_SHOWCOLORHINTS=true
 GIT_PS1_SHOWDIRTYSTATE=true
-PROMPT_COMMAND='__git_ps1 "$GREEN\u@\h $BLUE$version $YELLOW\w$COLOR_NONE" "\\\$ "'
+PROMPT_COMMAND='__git_ps1 "$GREEN\u@\h $BLUE$PYENV_VERSION $YELLOW\w$COLOR_NONE" "\\\$ "'
