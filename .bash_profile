@@ -7,6 +7,23 @@ export EDITOR="$VISUAL"
 # git autocomplete
 source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 
+docker_container_id () {
+  docker ps | grep $1 | awk '{print $1}'
+}
+
+docker_ssh_by_name () {
+  id=$(docker_container_id $1)
+  docker exec -it $id /bin/sh
+}
+
+docker_kill_by_name () {
+  id=$(docker_container_id $1)
+  docker kill $id
+}
+alias cid="docker_container_id"
+alias dssh="docker_ssh_by_name"
+alias dkill="docker_kill_by_name"
+
 # GO
 export GOPATH=~/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
